@@ -1,0 +1,15 @@
+export const contractKeys = {
+  lists: ["contracts"] as const,
+  list: (params: object) => ["contracts", params] as const,
+  detail: (id: string) => ["contract", id] as const,
+  history: (id: string) => ["contract-history", id] as const,
+  versions: (id: string) => ["contract-versions", id] as const,
+  diff: (id: string, from: number, to: number) => ["contract-diff", id, from, to] as const,
+  terms: (id: string, at: string) => ["contract-terms", id, at] as const,
+  addenda: (contractId: string) => ["addenda", contractId] as const,
+  addendum: (id: string) => ["addendum", id] as const,
+  services: ["services", "active"] as const,
+  serviceGroups: ["service-groups"] as const,
+  customerSearch: (q: string, status?: string) => ["customer-options", q, status ?? "all"] as const,
+  customer: (id: string) => ["customer-option", id] as const,
+};
